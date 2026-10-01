@@ -110,28 +110,31 @@ function App() {
   const [search, setSearch] = useState('')
 
   const addBook = (name, author, genre) => {
-    setBooks([...books.filter((book).id !== id), { id: books.length + 1, name, author, genre }])
-
-    const filteredBooks = books.filter((book) => book.name.toLowerCase().includes(search.toLowerCase()))
+    setBooks([...books, { id: Date.now(), name, author, genre }])
   }
+
+  const deleteBook = (id) => {
+    setBooks(books.filter((book) => book.id !== id))
+  }
+
+  const filteredBooks = books.filter((book) =>
+    book.name.toLowerCase().includes(search.toLowerCase())
+  )
+
   return (
     <>
-    <h1>My Book Library</h1>
-    <AddBookForm onAddBook={addBook} />
+      <h1>My Book Library</h1>
+      <AddBookForm onAddBook={addBook} />
       <input
         type="text"
         placeholder="Search by book name"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <BookList books={filteredBooks} onDelete ={deleteBook} />
       <button onClick={() => setSearch('')}>Clear Search</button>
-      <BookList books={books.filter((book) => book.name.toLowerCase().includes(search.toLowerCase()))} />
-      <AddBookForm addBook={addBook} />
+      <BookList books={filteredBooks} onDelete={deleteBook} />
     </>
   )
 }
-
-export default App
-      
+export default App;
     
