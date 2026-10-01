@@ -107,7 +107,13 @@ import AddBookForm from './components/AddBookForm'
   
 function App() {
   const [books, setBooks] = useState(initialBooks)
-  const [searchTerm, setSearchTerm] = useState('')
+  const [search, setSearch] = useState('')
+
+  const addBook = (name, author, genre) => {
+    setBooks([...books.filter((book).id !== id), { id: books.length + 1, name, author, genre }])
+
+    const filteredBooks = books.filter((book) => book.name.toLowerCase().includes(search.toLowerCase()))
+  }
   return (
     <>
       <AddBookForm />
