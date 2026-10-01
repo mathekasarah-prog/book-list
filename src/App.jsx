@@ -116,10 +116,22 @@ function App() {
   }
   return (
     <>
-      <AddBookForm />
-      <BookList books={books} />
+    <h1>My Book Library</h1>
+    <AddBookForm onAddBook={addBook} />
+      <input
+        type="text"
+        placeholder="Search by book name"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      <BookList books={filteredBooks} onDelete ={deleteBook} />
+      <button onClick={() => setSearch('')}>Clear Search</button>
+      <BookList books={books.filter((book) => book.name.toLowerCase().includes(search.toLowerCase()))} />
+      <AddBookForm addBook={addBook} />
     </>
   )
 }
 
 export default App
+      
+    
