@@ -107,10 +107,11 @@ import AddBookForm from './components/AddBookForm'
   
 function App() {
   const [books, setBooks] = useState(initialBooks)
+  const [searchTerm, setSearchTerm] = useState('')
   return (
     <>
       <AddBookForm />
-      <BookList />
+      <BookList books={books} />
     </>
   )
 }
