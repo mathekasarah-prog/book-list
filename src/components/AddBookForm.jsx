@@ -25,20 +25,25 @@ function AddBookForm({ onAddBook }) {
           placeholder="Book Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          className="border border-gray-300 rounded-lg px-4 py-2 w-full mb-4"
         />
         <input
           type="text"
           placeholder="Author"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
+          className="border border-gray-300 rounded-lg px-4 py-2 w-full mb-4"
         />
         <input
           type="text"
           placeholder="Genre"
           value={genre}
           onChange={(e) => setGenre(e.target.value)}
+          className="border border-gray-300 rounded-lg px-4 py-2 w-full mb-4"
         />
-        <button type="submit">Add Book</button>
+        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Add Book
+        </button>
       </form>
     </div>
   )

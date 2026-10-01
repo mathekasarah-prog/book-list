@@ -2,11 +2,18 @@ import React from 'react'
 
 function BookItem({ book,onDelete }) {
   return (
-    <div>
-      <h3>{book.name}</h3>
-      <p>Author: {book.author}</p>
-      <p>Genre: {book.genre}</p>
-      <button onClick={() => onDelete(book.id)}>Delete</button>
+    <div className="border border-gray-300 rounded-lg p-4">
+        <div className="flex flex-col items-center">
+        <img src={book.image} alt={book.name} className="w-full h-48 object-cover mb-4" />
+        <div className="text-center">
+        <h3 className='text-lg text-green-700 font-bold '>{book.name}</h3>
+        <p className='text-gray-600'>Author: {book.author}</p>
+        <p className='text-gray-600'>Genre: {book.genre}</p>
+        </div>
+        <button onClick={() => onDelete(book.id)} className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
+        Delete
+        </button>
+      </div>    
     </div>
   )
 }

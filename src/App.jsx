@@ -122,18 +122,21 @@ function App() {
   )
 
   return (
-    <>
-      <h1>My Book Library</h1>
+    <div className="container mx-auto p-4">
+      <div className="mb-4">
+        <h1 className="text-3xl font-bold">My Book Library</h1>
+      
       <AddBookForm onAddBook={addBook} />
-      <input
+      <input className='border border-gray-300 rounded-lg px-4 py-2 w-full mb-4'
         type="text"
         placeholder="Search by book name"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <button onClick={() => setSearch('')}>Clear Search</button>
+      <button className='bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded-lg' onClick={() => setSearch('')}>Clear Search</button>
+      </div>
       <BookList books={filteredBooks} onDelete={deleteBook} />
-    </>
+    </div>
   )
 }
 export default App;
