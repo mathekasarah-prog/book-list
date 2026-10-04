@@ -1,16 +1,62 @@
-# React + Vite
+# Book Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React app that displays a list of books. You can add new books, delete books, and search by title.
 
-Currently, two official plugins are available:
+**Live demo:** [your deployed link]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Book list rendered dynamically from an array of objects using `.map()`
+- Separate components for the list (`BookList`) and each item (`BookItem`)
+- Add new books with a form (`AddBookForm`)
+- Delete books with a button on each item
+- Search/filter books by title
+- Fade-in animation for list items
+- Responsive, simple CSS styling
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React (JavaScript)
+- Vite
+- CSS
+- Deployed on [Vercel / Netlify / GitHub Pages]
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+
+```
+src/
+  App.jsx
+  App.css
+  components/
+    BookList.jsx
+    BookItem.jsx
+    AddBookForm.jsx
+```
+
+## Getting Started
+
+1. Clone the repository
+```bash
+   git clone [your repo link]
+   cd [your repo name]
+```
+2. Install dependencies
+```bash
+   npm install
+```
+3. Start the development server
+```bash
+   npm run dev
+```
+4. Open the local URL shown in the terminal (usually `http://localhost:5173`).
+
+## How It Works
+
+- `App` holds the books array in state, along with the add, delete, and search logic.
+- `BookList` receives the (filtered) books and maps over them, rendering one `BookItem` per book.
+- `BookItem` displays a single book and calls the delete handler it receives from `App`.
+- `AddBookForm` manages its own input fields and passes the new book up to `App` on submit.
+
+## Author
+
+[Sarah Matheka] - [mathekasarah-prog]
