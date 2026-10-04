@@ -2,7 +2,7 @@
 
 A React app that displays a list of books. You can add new books, delete books, and search by title.
 
-**Live demo:** [your deployed link]
+**Live demo:** [https://mathekasarah-prog.github.io/book-list/]
 
 ## Features
 
@@ -37,8 +37,8 @@ src/
 
 1. Clone the repository
 ```bash
-   git clone [your repo link]
-   cd [your repo name]
+   git clone [https://github.com/mathekasarah-prog/book-list.git]
+   cd [mathekasarah-prog]
 ```
 2. Install dependencies
 ```bash
