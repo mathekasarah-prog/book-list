@@ -2,7 +2,7 @@
 
 A React app that displays a list of books. You can add new books, delete books, and search by title.
 
-**Live demo:** [https://mathekasarah-prog.github.io/book-list/]
+**Live demo:** [https://book-list-eosin-mu.vercel.app/]
 
 ## Features
 
